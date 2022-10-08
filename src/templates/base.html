@@ -1,0 +1,139 @@
+<!-- Base template for other to inherite -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no"/>
+    <meta name="description" content=""/>
+    <meta name="author" content=""/>
+    <title>CIK Audio Video</title>
+    <link href="{{url_for('static', filename='styles.css')}}" rel="stylesheet"/>
+    <link href="{{url_for('static', filename='bootstrap.css')}}" rel="stylesheet"/>
+
+</head>
+<body>
+<header id="base-header">
+   <nav class="navbar navbar-expand-sm py-3 py-lg-5">
+        <div class="container-fluid ">
+            <a class="navbar-brand" href="/"><img src="{{url_for('static', filename='logo_CIK.png')}}"></a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#collapsibleNavbar">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="collapsibleNavbar">
+                <ul class="navbar-nav ms-auto w-100 justify-content-end">
+                    <li class="nav-item">
+                        <a class="nav-link" href="/">Accueil</a>
+                    </li>
+                    <li class="nav-item dropdown">
+                        <a class="nav-link custom-dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown">Informatique</a>
+                        <ul class="dropdown-menu">
+                            <li><a class="dropdown-item" href="#">Desktop</a></li>
+                            <li><a class="dropdown-item" href="/laptop">Laptop</a></li>
+                            <li><a class="dropdown-item" href="#">Serveur</a></li>
+                            <li><a class="dropdown-item" href="/develop">DEVELOPMENT</a></li>
+                        </ul>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#">Électronique</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#">Services</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#">Contact</a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+</header>
+{% block main %}
+
+{% endblock %}
+<footer class="footer">
+    <div class="container-fluid" id="footer-grid">
+        <div class="row text-footer">
+            <div class="col-lg-4 col-md-12 ">
+                <h5>Heures d'ouverture</h5>
+                <ul class="list-unstyled">
+                    <li>
+                        <a>Lundi: 9:00 à 17:00</a>
+                    </li>
+                    <li>
+                        <a>Mardi: 9:00 à 17:00</a>
+                    </li>
+                    <li>
+                        <a>Mercredi: 9:00 à 17:00</a>
+                    </li>
+                    <li>
+                        <a>Jeudi: 9:00 à 20:00</a>
+                    </li>
+                    <li>
+                        <a>Vendred: 9:00 à 20:00</a>
+                    </li>
+                    <li>
+                        <a>Samedi: 10:00 à 17:00</a>
+                    </li>
+                    <li>
+                        <a>Dimanche: fermé</a>
+                    </li>
+                </ul>
+
+            </div>
+            <div class="col-lg-4 col-md-12">
+                <h5>Adresse</h5>
+                <ul class="list-unstyled">
+                    <li>
+                        <a>1979 King Ouest</a>
+                    </li>
+                    <li>
+                        <a>Sherbrooke, Qc</a>
+                    </li>
+                    <li>
+                        <a>J1J 2E6  </a>
+                    </li>
+                </ul>
+                <h5>Nous joindre</h5>
+                <ul class="list-unstyled">
+                    <li>
+                        <a>Tél : 819-822-0045</a>
+                    </li>
+                    <li>
+                        <a>Fax : 819-822-3428</a>
+                    </li>
+                </ul>
+
+            </div>
+            <div class="col-lg-4 col-md-12">
+                <h5>Pour les ventes</h5>
+                 <ul class="list-unstyled">
+                    <li>
+                        <a>Courriel pour les ventes :</a>
+                    </li>
+                    <li>
+                        <a>vente@cik.qc.ca</a>
+                    </li>
+                    
+                 </ul>
+                 <h5>Adresse</h5>
+                 <ul class="list-unstyled">
+                    <li>
+                        <a>Courriel pour les techniciens :</a>
+                    </li>
+                    <li>
+                        <a>technicien@cik.qc.ca </a>
+                    </li>
+                    <li>
+                        <a>Fax : 819-822-3428</a>
+                    </li>
+                </ul>
+
+            </div>
+        </div>
+    </div>
+</footer>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js"></script>
+<script src="{{url_for('static', filename='scripts.js')}}"></script>
+</body>
+</html>

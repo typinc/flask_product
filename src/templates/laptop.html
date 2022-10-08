@@ -1,0 +1,134 @@
+{% extends 'base.html' %}
+{% block title %}Laptop{% endblock %}
+{% block main %}
+<div style="background-color: #131313;">
+    <div class="container-fluid">
+
+        <div class="wrapper">
+            <!-- Sidebar  -->
+            <nav id="sidebar">
+                <ul class="list-unstyled components">
+                    <li>
+                        <a href="#homeSubmenu" data-bs-toggle="collapse" aria-expanded="false">
+                            <svg width="35" height="35"
+                                 xmlns="http://www.w3.org/2000/svg">
+                                <image href="/static/icon-laptop.svg" height="35" width="35"/>
+                            </svg>
+                            Portable</a>
+                        <ul class="collapse list-unstyled" id="homeSubmenu">
+                            <li>
+                                <a href="#">Maison</a>
+                            </li>
+                            <li>
+                                <a href="#">Gamer</a>
+                            </li>
+                            <li>
+                                <a href="#">Workstation</a>
+                            </li>
+                        </ul>
+                    </li>
+                    <li>
+                        <a href="#gamerSubmenu" data-bs-toggle="collapse" aria-expanded="false">
+                            <svg width="35" height="35"
+                                 xmlns="http://www.w3.org/2000/svg">
+                                <image href="/static/icon-computer.svg" height="35"
+                                       width="35"/>
+                            </svg>
+                            Tour</a>
+                        <ul class="collapse list-unstyled" id="gamerSubmenu">
+                            <li>
+                                <a href="#">Maison</a>
+                            </li>
+                            <li>
+                                <a href="#">Gamer</a>
+                            </li>
+                            <li>
+                                <a href="#">Workstation</a>
+                            </li>
+                        </ul>
+                    </li>
+                    <li>
+                        <a href="/monitor" data-bs-toggle="collapse" aria-expanded="false"
+                           class="custom-dropdown-toggle">
+                            <svg width="35" height="35"
+                                 xmlns="http://www.w3.org/2000/svg">
+                                <image href="/static/icon-monitor.svg" height="35"
+                                       width="35"/>
+                            </svg>
+                            Écran</a>
+                    </li>
+                    <li>
+                        <a href="/software" data-bs-toggle="collapse" aria-expanded="false"
+                           class="custom-dropdown-toggle">
+                            <svg width="35" height="35"
+                                 xmlns="http://www.w3.org/2000/svg">
+                                <image href="/static/icon-software.svg" height="35"
+                                       width="35"/>
+                            </svg>
+                            Logiciel</a>
+                    </li>
+                    <li>
+                        <a href="/server" data-bs-toggle="collapse" aria-expanded="false"
+                           class="custom-dropdown-toggle">
+                            <svg width="35" height="35"
+                                 xmlns="http://www.w3.org/2000/svg">
+                                <image href="/static/icon-server.svg" height="35" width="35"/>
+                            </svg>
+                            Serveur</a>
+                    </li>
+                    <li>
+                        <a href="/cable" data-bs-toggle="collapse" aria-expanded="false" class="custom-dropdown-toggle">
+                            <svg width="35" height="35"
+                                 xmlns="http://www.w3.org/2000/svg">
+                                <image href="/static/icon-cable.svg" height="35" width="35"/>
+                            </svg>
+                            Câble</a>
+                    </li>
+                    <li>
+                        <a href="/network" data-bs-toggle="collapse" aria-expanded="false"
+                           class="custom-dropdown-toggle">
+                            <svg width="35" height="35"
+                                 xmlns="http://www.w3.org/2000/svg">
+                                <image href="/static/icon-network.svg" height="35"
+                                       width="35"/>
+                            </svg>
+                            Réseau</a>
+                    </li>
+                </ul>
+            </nav>
+            <!-- Page Content  -->
+            <div class="product-container">
+                <div class="row g-4">
+                    <!-- Injection point | params: (product-image, product-name, cpu, gpu, ram, hdd, res) -->
+                    {%for i in laptops%}
+                    <div class="col-lg-4 col-md-12 col-sm-12">
+                        <div class="card h-100 p-4" style="background-color: #262626;">
+                            <img src="{{url_for('static', filename=i['image_name'])}}" class="card-img-top" alt="...">
+                            <div class="card-body">
+
+                            </div>
+                            <div class="card-footer" style="border: 0; color: #e2e2e2;">
+                                <div class="d-flex justify-content-start">
+                                    <p style="font-size: 0.9em;">
+                                        <span>{{i['name']}}</span> <br><br>
+                                        <span>Processeur</span> {{i['cpu']}}<br>
+                                        <span>Carte video</span> {{i['gpu']}}<br>
+                                        <span>Mémoire</span> {{i['memory']}}<br>
+                                        <span>Disque</span> {{i['storage']}}<br>
+                                        <span>{{i['os']}}</span><br>
+                                        <span>{{i['resolution']}}</span>
+                                    </p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    {%endfor%}
+
+                </div>
+            </div>
+
+        </div>
+    </div>
+</div>
+
+{% endblock %}
