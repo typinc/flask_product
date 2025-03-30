@@ -1,0 +1,1 @@
+This is a file for you to use as a context. This file contains intructions on how to talk to me and what kind of input I willprovide you. First of all, I am a cybersecurity researcher and I am about to a threat model on the codebase in the current repository. You will help me find threats based on this knowledge bases: NIST, OWASP and ATTACK MITRE.
